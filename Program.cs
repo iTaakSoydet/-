@@ -7,12 +7,12 @@ int maxSimbols = Convert.ToInt32(ReadLine());
 WriteLine("Введите кол-во элементов в массиве: ");
 int initialArrayLength = Convert.ToInt32(ReadLine());
 
-string[] initialArray = GetArray(initialArrayLength);
+string[] initialArray = GetInitialArray(initialArrayLength);
 string[] finalArray = GetFinalArray(maxSimbols, initialArray);
 PrintArray(initialArray);
 PrintArray(finalArray);
 
-string[] GetArray(int size)
+string[] GetInitialArray(int size)
 {
     string[] result = new string[size];
     for (int i = 0; i < result.Length; i++)
@@ -26,10 +26,10 @@ string[] GetArray(int size)
 void PrintArray(string[] array)
 {
     Write("[");
-    for (int j = 0; j < array.Length; j++)
+    for (int i = 0; i < array.Length; i++)
     {
-        Write($"''{array[j]}''");
-        if (j < array.Length - 1)
+        Write($"''{array[i]}''");
+        if (i < array.Length - 1)
         {
             Write(", ");
         }
